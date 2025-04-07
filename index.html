@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Eletronico</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let senha = 223762;
+        let saldo = 489.35;
+        let letra = "JDF"
+    
+        let continuar = true;
+    
+        while (continuar) {
+            let Verificador = parseInt(prompt("Digite a senha: "));
+            let VerificadorSenha = parseInt(prompt("Digite a senha em Letras \n(Todas as letras devem ser maiúsculas): "));
+
+            if (verificador === senha && VerificarLetra === letra) {
+                Escolha();
+                continuar = false;
+            } else {
+                alert('Errou a senha');
+            }
+        }
+    
+        function Escolha() {
+            let escolha = parseInt(prompt('Olá \nSelecione uma opção \n1) Saldo \n2) Depósito \n3) Saque \n4) Fazer transferência \n5) Sair'));
+    
+            switch (escolha) {
+                case 1:
+                    Saldo();
+                    break;
+                case 2:
+                    Deposito();
+                    break;
+                case 3:
+                    Saque();
+                    break;
+                case 4:
+                    Transfer();
+                    break;
+                case 5:
+                    alert("Saindo...");
+                    window.close
+                    break;
+                default:
+                    alert("Opção inválida!");
+            }
+        }
+    
+        
+        function Saldo() {
+            alert("Seu saldo é: R$ " + saldo.toFixed(2));
+            Escolha()
+        }
+    
+        function Deposito() {
+           let deposito =  parseFloat(prompt("Olá, quanto deseja depositar? \n Digite o valor:"))
+
+            if( isNaN(deposito) && deposito == 0){
+                alert('Favor digitar algum valor')
+                Deposito()
+            } else {
+                saldo += deposito
+                alert(`Seu novo saldo é de: \n ${saldo.toFixed(2)}`)
+                Escolha()
+            }
+
+            
+        }
+    
+        function Saque() {
+            
+        }
+    
+        function Transfer() {
+            
+        }
+    </script>
+    
+
+    </script>
+</body>
+</html>
